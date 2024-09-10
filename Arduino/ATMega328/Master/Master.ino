@@ -40,12 +40,12 @@ interrupt_configuration_t DEFAULT_INTERRUPT_CONFIG = {
   true
 };
 void setup() {
- // pinMode(ledPin, OUTPUT);
+  // pinMode(ledPin, OUTPUT);
   // DEBUG monitoring
   Serial.begin(57600);
   //delay(2000);
   //while (!Serial);
-  
+
   Serial.println(F("### DW1000Ng-arduino-ranging-Initiator ###"));
   // initialize the driver
   DW1000Ng::initialize(PIN_SS, PIN_IRQ, PIN_RST);
@@ -58,7 +58,7 @@ void setup() {
   DW1000Ng::setNetworkId(10);
   DW1000Ng::setAntennaDelay(16436);
   //delay(1000);
-  DW1000Ng::setTXPower(522133279);  // 0x1F1F1F1F 
+  DW1000Ng::setTXPower(522133279);  // 0x1F1F1F1F
 
   Serial.println(F("Committed configuration ..."));
   // DEBUG chip info and registers pretty printed
@@ -78,52 +78,52 @@ void setup() {
 }
 
 void handleSent() {
-    // status change on sent success
-    sentAck = true;
+  // status change on sent success
+  sentAck = true;
 }
 
 void handleReceived() {
-    // status change on received success 
-    receivedAck = true;
+  // status change on received success
+  receivedAck = true;
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
 
-for (int i=0; i< 4; i++){
-  DW1000Ng::forceTRxOff();
-  data[18] = master_address;
-  data[19] = i+1;
-  DW1000Ng::setTransmitData(data, LEN_DATA);
-  DW1000Ng::startTransmit();
- // Serial.write (255);
- // Serial.write (1);
-  delay(50); // 3 anchors so it should be much shorter than 100
-}
-for (int i=4; i< 7; i++){
-  DW1000Ng::forceTRxOff();
-  data[18] = master_address;
-  data[19] = i+1;
-  DW1000Ng::setTransmitData(data, LEN_DATA);
-  DW1000Ng::startTransmit();
- // Serial.write (255);
- // Serial.write (1);
-  delay(10); // 3 anchors so it should be much shorter than 100
-}
+  for (int i = 0; i < 13; i++) {
+    DW1000Ng::forceTRxOff();
+    data[18] = master_address;
+    data[19] = i + 1;
+    DW1000Ng::setTransmitData(data, LEN_DATA);
+    DW1000Ng::startTransmit();
+    // Serial.write (255);
+    // Serial.write (1);
+    delay(50); // 3 anchors so it should be much shorter than 100
+  }
+  //for (int i=4; i< 7; i++){
+  //  DW1000Ng::forceTRxOff();
+  //  data[18] = master_address;
+  //  data[19] = i+1;
+  //  DW1000Ng::setTransmitData(data, LEN_DATA);
+  //  DW1000Ng::startTransmit();
+  // // Serial.write (255);
+  // // Serial.write (1);
+  //  delay(10); // 3 anchors so it should be much shorter than 100
+  //}
 
 
 
   /*
-  DW1000Ng::forceTRxOff();
-  data[18] = master_address;
-  data[19] = 2;
-  DW1000Ng::setTransmitData(data, LEN_DATA);
-  DW1000Ng::startTransmit();
-  Serial.write (255);
-  Serial.write (2);
-  delay(1000);
+    DW1000Ng::forceTRxOff();
+    data[18] = master_address;
+    data[19] = 2;
+    DW1000Ng::setTransmitData(data, LEN_DATA);
+    DW1000Ng::startTransmit();
+    Serial.write (255);
+    Serial.write (2);
+    delay(1000);
   */
-  
-  
-  
+
+
+
 }

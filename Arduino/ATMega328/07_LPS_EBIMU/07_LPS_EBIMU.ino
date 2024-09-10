@@ -19,7 +19,7 @@
     Data Structure
    https://docs.google.com/spreadsheets/d/1Cie-AcoIuojLqRC60rg6zebejEXcjnMsB474eh22s5Q/edit?usp=sharing
 */
-#include <Wire.h>
+//#include <Wire.h>
 #include <SoftwareSerial.h>
 
 #include <SPI.h>
@@ -65,7 +65,7 @@ byte r_destination_address = 1;
 byte d_data[LEN_DATA];
 byte i_data[LEN_DATA];
 byte r_data[LEN_DATA];
-byte distance_result[20];  // buffer to store ranging data
+byte distance_result[3];  // buffer to store ranging data
 byte failure_counter[20];
 byte _info[80]; // _info[0] song_num _info[1] MSB_duation  _info[2] LSB_duation  _info[3] bow_state
 
@@ -152,13 +152,14 @@ const int VEC_MAX = 6;
 float vec[VEC_MAX] = {0,   0,   0,     0,        0,      0};
 char sbuf[SBUF_SIZE];
 signed int sbuf_cnt = 0;
+
 SoftwareSerial softSerial(5, 4); // RX, TX
 ///////////////////////////////////////////////////////////////////////////////////////
 
 
 void setup() {
-  Wire.begin(DEVICE);
-  Wire.onRequest(requestEvent);
+//  Wire.begin(DEVICE);
+//  Wire.onRequest(requestEvent);
 
   pinMode(13, OUTPUT);
   // put your setup code here, to run once:
@@ -362,17 +363,17 @@ void sendResult() {
   byte elapsed_time = (millis() - time_stamp);
 
 
-  byte lenData = 23;
+  byte lenData = 6;
   byte s_data[lenData];
   s_data[0] = 255;
 
   s_data[1] = FINAL_RESULT;
 
-  memcpy(&s_data[2], distance_result, 20);
+  memcpy(&s_data[2], distance_result, 3);
 
-  s_data[22] = elapsed_time;
+  s_data[5] = elapsed_time;
 
-  Serial.write(s_data, lenData);
+  softSerial.write(s_data, lenData);
 
 }
 
@@ -480,11 +481,11 @@ void twrInitiator() {
         DW1000Ng::startReceive();
 
 
-        //   sendResult();
+           sendResult();
 //        printResult();
-        vec[0] = distance_result[0];
-        vec[1] = distance_result[1];
-        vec[2] = distance_result[2];
+//        vec[0] = distance_result[0];
+//        vec[1] = distance_result[1];
+//        vec[2] = distance_result[2];
 
 
         return;
@@ -737,42 +738,6 @@ void blinkLED() {
   delay(100);
 }
 
-void requestEvent() {
-  Wire.write((uint8_t*) vec, sizeof(vec));
-}
-
-int EBimuAsciiParser(float *item, int number_of_item)
-{
-  int n, i;
-  int rbytes;
-  char *addr;
-  int result = 0;
-
-  rbytes = softSerial.available();
-  for (n = 0; n < rbytes; n++)
-  {
-    sbuf[sbuf_cnt] = softSerial.read();
-    if (sbuf[sbuf_cnt] == 0x0a)
-    {
-      addr = strtok(sbuf, ",");
-      for (i = 0; i < number_of_item; i++)
-      {
-        item[i] = atof(addr);
-        addr = strtok(NULL, ",");
-      }
-
-      result = 1;
-
-      // softSerial.print("\n\r");
-      // for(i=0;i<number_of_item;i++)  {  softSerial.print(item[i]);  Serial.print(" "); }
-    }
-    else if (sbuf[sbuf_cnt] == '*')
-    { sbuf_cnt = -1;
-    }
-
-    sbuf_cnt++;
-    if (sbuf_cnt >= SBUF_SIZE) sbuf_cnt = 0;
-  }
-
-  return result;
-}
+//void requestEvent() {
+//  Wire.write((uint8_t*) vec, sizeof(vec));
+//}
