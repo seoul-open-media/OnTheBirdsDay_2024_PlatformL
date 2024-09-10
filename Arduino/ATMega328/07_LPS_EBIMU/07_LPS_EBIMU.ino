@@ -153,7 +153,8 @@ float vec[VEC_MAX] = {0,   0,   0,     0,        0,      0};
 char sbuf[SBUF_SIZE];
 signed int sbuf_cnt = 0;
 
-SoftwareSerial softSerial(5, 4); // RX, TX
+//SoftwareSerial softSerial(5, 4); // RX, TX
+SoftwareSerial softSerial(18, 19); // RX, TX
 ///////////////////////////////////////////////////////////////////////////////////////
 
 
