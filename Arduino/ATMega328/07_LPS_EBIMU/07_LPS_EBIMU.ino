@@ -163,8 +163,8 @@ void setup() {
 //  Wire.onRequest(requestEvent);
 
   pinMode(13, OUTPUT);
-  pinMode(14, INPUT);
-  pinMode(15, OUTPUT);
+  pinMode(A4, INPUT);
+  pinMode(A5, OUTPUT);
   
   // put your setup code here, to run once:
   // DEBUG monitoring
