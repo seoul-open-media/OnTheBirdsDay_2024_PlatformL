@@ -154,7 +154,7 @@ char sbuf[SBUF_SIZE];
 signed int sbuf_cnt = 0;
 
 //SoftwareSerial softSerial(5, 4); // RX, TX
-SoftwareSerial softSerial(A4, A5); // RX, TX
+SoftwareSerial softSerial(A5, A4); // RX, TX
 ///////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -163,8 +163,8 @@ void setup() {
 //  Wire.onRequest(requestEvent);
 
   pinMode(13, OUTPUT);
-  pinMode(A4, INPUT);
-  pinMode(A5, OUTPUT);
+  pinMode(A5, INPUT);
+  pinMode(A4, OUTPUT);
   
   // put your setup code here, to run once:
   // DEBUG monitoring
@@ -378,42 +378,10 @@ void sendResult() {
   s_data[5] = elapsed_time;
 
   softSerial.write(s_data, lenData);
+ // Serial.write(s_data, lenData);
 
 }
 
-void getSerialData() {
-  if (Serial.available() > 5) {
-    byte first_byte = Serial.read();
-    byte second_byte = Serial.read();
-    // my_address, network_id, total_num_headphones, poll_ack_check_threshold;
-    if (first_byte == 255 && second_byte == SEND_SONG_INFO) {
-
-      _info[4 * (my_address - 1)] = Serial.read(); // song_num
-      _info[4 * (my_address - 1) + 1] = Serial.read(); // MSB_duation
-      _info[4 * (my_address - 1) + 2] = Serial.read(); // LSB_duation
-      _info[4 * (my_address - 1) + 3] = Serial.read(); // bow_state
-    } else if (first_byte == 255 && second_byte == EXCHANGE_FINISH) {
-
-
-      DW1000Ng::forceTRxOff();
-      // send out rightaway
-      byte d_data[22];
-      d_data[16] = exchange_finish_mode;  // mode from sender
-      d_data[17] = Serial.read(); // destinstion address, playSdWav2_engaged_address
-      // d_data[18] = Serial.read(); // my address
-      d_data[18] = my_address;
-      d_data[19] = EXCHANGE_FINISHED;
-      d_data[20] = Serial.read(); // my previous song num
-      d_data[21] = Serial.read(); // my new song num
-      DW1000Ng::setTransmitData(d_data, LEN_DATA);
-      DW1000Ng::startTransmit();
-
-
-    }
-    // empty serial buffer, better way?
-    while ( Serial.available())Serial.read();
-  }
-}
 unsigned long lastTimeCheckIMU = 0;
 void loop() {
 
