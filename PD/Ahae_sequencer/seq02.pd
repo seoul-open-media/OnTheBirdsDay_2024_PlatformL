@@ -65,6 +65,9 @@
 #X obj 1002 107 nbx_pre Ahae \$0 14;
 #X obj 1065 107 nbx_pre Ahae \$0 15;
 #X obj 1128 107 nbx_pre Ahae \$0 16;
+#X obj 38 125 loadbang;
+#X obj 38 150 \$0;
+#X floatatom 38 175 5 0 0 0 - - - 0;
 #X connect 0 0 32 0;
 #X connect 1 0 32 0;
 #X connect 2 0 32 0;
@@ -113,4 +116,6 @@
 #X connect 47 0 13 1;
 #X connect 48 0 14 1;
 #X connect 49 0 15 1;
+#X connect 50 0 51 0;
+#X connect 51 0 52 0;
 #X coords 0 -1 1 1 1100 30 2 100 100;
