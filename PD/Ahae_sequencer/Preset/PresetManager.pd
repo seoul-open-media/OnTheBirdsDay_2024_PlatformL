@@ -102,8 +102,7 @@
 #fcfcfc #000000 #000000;
 #X obj 318 85 t b f;
 #X obj 316 64 r light_control;
-#X floatatom 133 -11 5 0 0 2 Ahae\ Sequence\ Number num_seq_Ahae -
-0;
+#X floatatom 133 -11 5 0 0 2 - num_preset_pos - 0;
 #X obj 131 18 t b f;
 #X connect 1 0 4 1;
 #X connect 1 0 11 1;
