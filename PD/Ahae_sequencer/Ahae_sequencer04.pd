@@ -1,4 +1,4 @@
-#N canvas 78 89 1832 952 12;
+#N canvas 78 89 1850 984 12;
 #X declare -lib Gem;
 #N canvas 548 46 961 843 16beat_sequencer 0;
 #X obj 67 258 metro 1000;
@@ -137,12 +137,12 @@
 #X obj 60 238 seq02 3;
 #X obj 60 283 seq02 4;
 #X obj 60 328 seq02 5;
-#X obj 60 418 seq02 6;
-#X obj 60 373 seq02 7;
+#X obj 58 374 seq02 6;
+#X obj 60 422 seq02 7;
 #X obj 60 463 seq02 8;
 #X obj 60 508 seq02 9;
-#X obj 60 598 seq02 10;
-#X obj 60 553 seq02 11;
+#X obj 60 554 seq02 10;
+#X obj 58 599 seq02 11;
 #X obj 60 643 seq02 12;
 #X obj 60 688 seq02 13;
 #X obj 1180 26 Xbee02;
