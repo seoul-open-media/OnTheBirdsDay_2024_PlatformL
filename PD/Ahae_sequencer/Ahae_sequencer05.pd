@@ -1,4 +1,4 @@
-#N canvas 72 33 1550 858 12;
+#N canvas 138 92 1550 858 12;
 #X text 24 204 Ahae;
 #X text 35 227 1;
 #X text 36 270 2;
@@ -98,10 +98,11 @@ num_seq_Ahae 0;
 #000000 #000000 0 1;
 #X obj 1240 106 send_oneshot;
 #X obj 1325 175 global_messages;
-#N canvas 900 359 333 231 sequence_player 0;
+#N canvas 900 359 764 394 sequence_player 0;
 #X obj 29 14 seq_player 0 1 1 1;
 #X obj 27 79 seq_player 0 30 6 2;
 #X obj 27 148 seq_player 1 30 7 1;
+#X obj 459 56 seq_player 20 30 20 2;
 #X restore 1326 560 pd sequence_player;
 #N canvas 148 446 1546 557 sequencer_main 0;
 #N canvas 144 120 1263 818 16beat_sequencer 0;
