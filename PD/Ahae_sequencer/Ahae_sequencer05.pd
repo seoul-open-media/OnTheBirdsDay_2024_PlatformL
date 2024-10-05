@@ -1,4 +1,4 @@
-#N canvas 389 60 1550 858 12;
+#N canvas 253 31 1550 858 12;
 #X text 24 204 Ahae;
 #X text 35 227 1;
 #X text 36 270 2;
@@ -41,30 +41,24 @@
 #X obj 62 716 seq02 12;
 #X obj 62 761 seq02 13;
 #X obj 1325 534 Xbee02;
-#X floatatom 1345 75 5 0 0 2 Ahae\ Sequence\ Number num_seq_Ahae_timeline
-num_seq_Ahae 0;
+#X floatatom 1345 75 5 0 0 2 Ahae\ Sequence\ Number num_seq_Ahae_timeline num_seq_Ahae 0;
 #N canvas 187 186 1850 984 timeline 0;
 #X obj 109 460 metro 1000;
 #X obj 109 489 f;
 #X obj 145 489 + 1;
-#X obj 107 437 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#X obj 107 437 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X floatatom 107 515 5 0 0 1 sec_global - sec_global 0;
-#X obj 110 345 hsl 1024 8 0 3000 0 0 empty empty empty -2 -8 0 10 #fcfcfc
-#000000 #000000 0 1;
+#X obj 110 345 hsl 1024 8 0 3000 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X msg 192 461 0;
 #X obj 122 404 t 1 b;
 #X floatatom 1139 309 5 0 0 0 - sec_global - 0;
 #X text 1138 336 50min;
 #X obj 177 406 t 0 b;
 #X floatatom 251 312 5 0 0 1 play\ from\ sec. - - 0;
-#X obj 108 309 tgl 25 0 empty empty empty 17 7 0 10 #00ff04 #000000
-#000000 0 1;
-#X obj 140 309 bng 25 250 50 0 empty empty stop 25 7 0 10 #ff0400 #000000
-#000000;
+#X obj 108 309 tgl 25 0 empty empty empty 17 7 0 10 #00ff04 #000000 #000000 0 1;
+#X obj 140 309 bng 25 250 50 0 empty empty stop 25 7 0 10 #ff0400 #000000 #000000;
 #X msg 61 311 0;
-#X obj 222 309 tgl 25 0 empty empty empty 17 7 0 10 #c6ffc7 #000000
-#000000 0 1;
+#X obj 222 309 tgl 25 0 empty empty empty 17 7 0 10 #c6ffc7 #000000 #000000 0 1;
 #X obj 321 415 f;
 #X obj 277 382 sel 1;
 #X obj 228 364 t f f;
@@ -96,14 +90,12 @@ num_seq_Ahae 0;
 #X connect 19 0 15 0;
 #X coords 0 -1 1 1 1100 60 2 100 300;
 #X restore 64 29 pd timeline;
-#X obj 65 192 tgl 15 0 enable_ahae_all empty All 17 7 0 10 #ffffff
-#000000 #000000 0 1;
+#X obj 65 192 tgl 15 0 enable_ahae_all empty All 17 7 0 10 #ffffff #000000 #000000 0 1;
 #X obj 1240 106 send_oneshot;
 #X obj 1325 175 global_messages;
 #N canvas 103 492 1546 557 sequencer_main 0;
 #N canvas 131 347 1636 834 16beat_sequencer 0;
-#X obj 113 509 select 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15, f 99
-;
+#X obj 113 509 select 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15, f 99;
 #X obj 47 562 outlet;
 #X obj 105 562 outlet;
 #X obj 160 562 outlet;
@@ -125,16 +117,13 @@ num_seq_Ahae 0;
 #X obj 448 299 int;
 #X obj 497 273 r num_repetition;
 #X floatatom 448 326 5 0 0 0 - - - 0;
-#X obj 401 484 bng 15 250 50 0 seq_end_bang empty seq_end_bang 17 7
-0 10 #fcfcfc #000000 #000000;
+#X obj 401 484 bng 15 250 50 0 seq_end_bang empty seq_end_bang 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 497 318 - 1;
 #X text 596 331 stop after 16th beat;
 #X obj 388 377 == 15;
 #X obj 474 379 ==;
-#X obj 397 409 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
-#X obj 414 408 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#X obj 397 409 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 414 408 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X msg 546 320 1;
 #X msg 379 313 0;
 #X obj 397 431 +;
@@ -150,33 +139,27 @@ num_seq_Ahae 0;
 #X floatatom 154 278 5 0 0 0 - - - 0;
 #X floatatom 152 226 14 0 0 2 interval\ in\ ms. - - 0;
 #X obj 153 255 / 10;
-#X obj 430 245 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
+#X obj 430 245 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X floatatom 119 184 5 0 0 0 - - - 0;
 #X msg 179 128 0;
 #X obj 323 188 % 10;
 #X obj 324 213 sel 2;
-#X obj 42 87 tgl 19 0 empty empty empty 0 -10 0 12 #fcfcfc #000000
-#000000 0 1;
+#X obj 42 87 tgl 19 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0 1;
 #X obj 113 19 inlet;
 #X obj 110 44 t f b;
-#X obj 200 41 bng 15 250 50 0 empty seq_end_bang seq_end_bang 17 7
-0 10 #fcfcfc #000000 #000000;
+#X obj 200 41 bng 15 250 50 0 empty seq_end_bang seq_end_bang 17 7 0 10 #fcfcfc #000000 #000000;
 #X msg 199 60 0, f 2;
-#X obj 181 438 bng 19 250 50 0 beat empty beat 0 -10 0 12 #fcfcfc #000000
-#000000;
+#X obj 181 438 bng 19 250 50 0 beat empty beat 0 -10 0 12 #fcfcfc #000000 #000000;
 #X floatatom 121 471 5 0 0 0 - - - 0;
 #X obj 120 435 % 16;
 #X obj 176 468 s global_bang;
 #X obj 52 246 spigot;
-#X obj 89 221 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#X obj 89 221 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X msg 52 165 0;
 #X obj 26 27 loadbang;
 #X msg 34 55 1;
 #X obj 320 162 spigot;
-#X obj 357 137 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#X obj 357 137 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 355 106 r start_poll_Ahae;
 #X connect 0 0 1 0;
 #X connect 0 1 2 0;
@@ -248,48 +231,29 @@ num_seq_Ahae 0;
 #X connect 65 0 64 0;
 #X restore 173 59 pd 16beat_sequencer;
 #X f 147;
-#X obj 112 128 tgl 25 0 empty empty On/Off 0 -10 0 12 #faff00 #000000
-#000000 0 1;
-#X obj 165 135 bng 19 250 50 0 beat1 empty empty 0 -10 0 12 #00ff04
-#000000 #000000;
-#X obj 247 135 bng 19 250 50 0 beat2 empty empty 0 -10 0 12 #fcfcfc
-#000000 #000000;
-#X obj 319 135 bng 19 250 50 0 beat3 empty empty 0 -10 0 12 #fcfcfc
-#000000 #000000;
-#X obj 382 135 bng 19 250 50 0 beat4 empty empty 0 -10 0 12 #fcfcfc
-#000000 #000000;
-#X obj 464 135 bng 19 250 50 0 beat5 empty empty 0 -10 0 12 #00ff04
-#000000 #000000;
-#X obj 529 135 bng 19 250 50 0 beat6 empty empty 0 -10 0 12 #fcfcfc
-#000000 #000000;
-#X obj 593 135 bng 19 250 50 0 beat7 empty empty 0 -10 0 12 #fcfcfc
-#000000 #000000;
-#X obj 655 135 bng 19 250 50 0 beat8 empty empty 0 -10 0 12 #fcfcfc
-#000000 #000000;
-#X obj 730 135 bng 19 250 50 0 beat9 empty empty 0 -10 0 12 #00ff04
-#000000 #000000;
-#X obj 800 135 bng 19 250 50 0 beat10 empty empty 0 -10 0 12 #fcfcfc
-#000000 #000000;
-#X obj 860 135 bng 19 250 50 0 beat11 empty empty 0 -10 0 12 #fcfcfc
-#000000 #000000;
-#X obj 922 135 bng 19 250 50 0 beat12 empty empty 0 -10 0 12 #fcfcfc
-#000000 #000000;
-#X obj 1004 135 bng 19 250 50 0 beat13 empty empty 0 -10 0 12 #00ff04
-#000000 #000000;
-#X obj 1063 135 bng 19 250 50 0 beat14 empty empty 0 -10 0 12 #fcfcfc
-#000000 #000000;
-#X obj 1127 135 bng 19 250 50 0 beat15 empty empty 0 -10 0 12 #fcfcfc
-#000000 #000000;
-#X obj 1190 135 bng 19 250 50 0 beat16 empty empty 0 -10 0 12 #fcfcfc
-#000000 #000000;
+#X obj 112 128 tgl 25 0 empty empty On/Off 0 -10 0 12 #faff00 #000000 #000000 0 1;
+#X obj 165 135 bng 19 250 50 0 beat1 empty empty 0 -10 0 12 #00ff04 #000000 #000000;
+#X obj 247 135 bng 19 250 50 0 beat2 empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
+#X obj 319 135 bng 19 250 50 0 beat3 empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
+#X obj 382 135 bng 19 250 50 0 beat4 empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
+#X obj 464 135 bng 19 250 50 0 beat5 empty empty 0 -10 0 12 #00ff04 #000000 #000000;
+#X obj 529 135 bng 19 250 50 0 beat6 empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
+#X obj 593 135 bng 19 250 50 0 beat7 empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
+#X obj 655 135 bng 19 250 50 0 beat8 empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
+#X obj 730 135 bng 19 250 50 0 beat9 empty empty 0 -10 0 12 #00ff04 #000000 #000000;
+#X obj 800 135 bng 19 250 50 0 beat10 empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
+#X obj 860 135 bng 19 250 50 0 beat11 empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
+#X obj 922 135 bng 19 250 50 0 beat12 empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
+#X obj 1004 135 bng 19 250 50 0 beat13 empty empty 0 -10 0 12 #00ff04 #000000 #000000;
+#X obj 1063 135 bng 19 250 50 0 beat14 empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
+#X obj 1127 135 bng 19 250 50 0 beat15 empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
+#X obj 1190 135 bng 19 250 50 0 beat16 empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
 #X text 1191 113 interval in ms.;
 #X obj 113 176 sel 0;
 #X obj 157 177 s seq_stop;
-#X obj 59 19 bng 15 250 50 0 empty seq_start_bang seq_start_bang 17
-7 0 10 #fcfcfc #000000 #000000;
+#X obj 59 19 bng 15 250 50 0 empty seq_start_bang seq_start_bang 17 7 0 10 #fcfcfc #000000 #000000;
 #X msg 59 37 1;
-#X obj 69 232 bng 15 250 50 0 empty seq_end_bang seq_end_bang 17 7
-0 10 #fcfcfc #000000 #000000;
+#X obj 69 232 bng 15 250 50 0 empty seq_end_bang seq_end_bang 17 7 0 10 #fcfcfc #000000 #000000;
 #X msg 69 257 0, f 9;
 #X obj 1239 134 nbx_pre Ahae Interval 1000;
 #X obj 106 210 r stop_global;
@@ -320,39 +284,55 @@ num_seq_Ahae 0;
 #X connect 26 0 24 0;
 #X coords 0 -1 1 1 1200 60 2 100 100;
 #X restore 8 105 pd sequencer_main;
-#X floatatom 1402 706 5 0 0 2 X\ in\ m. - - 0;
-#X floatatom 1469 705 5 0 0 2 Y\ in\ m. - - 0;
-#X floatatom 1402 761 5 0 0 0 - - - 0;
-#N canvas 625 230 450 300 pos_cal 0;
-#X floatatom 187 213 5 0 0 0 - - - 0;
-#X obj 99 63 inlet;
-#X obj 99 128 * 1000;
-#X obj 208 120 * 10;
-#X obj 209 65 inlet;
-#X obj 187 158 +;
-#X obj 187 183 + 10000;
-#X obj 188 244 outlet;
-#X floatatom 98 97 5 0 0 0 - - - 0;
-#X connect 0 0 7 0;
-#X connect 1 0 8 0;
-#X connect 2 0 5 0;
-#X connect 3 0 5 1;
-#X connect 4 0 3 0;
-#X connect 4 0 8 0;
-#X connect 5 0 6 0;
-#X connect 6 0 0 0;
-#X connect 8 0 2 0;
-#X restore 1402 733 pd pos_cal;
-#N canvas 375 374 1270 720 Scene01 0;
-#X obj 29 14 seq_player 0 1 1 1;
-#X obj 333 14 seq_player 0 30 6 2;
-#X obj 637 14 seq_player 1 30 7 1;
-#X obj 942 14 seq_player 20 30 20 2;
-#X restore 1326 560 pd Scene01;
-#X obj 1330 585 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
-#X obj 1330 606 s start_poll_Ahae;
-#X connect 48 0 51 0;
-#X connect 49 0 51 1;
-#X connect 51 0 50 0;
-#X connect 53 0 54 0;
+#N canvas 95 39 1828 964 Scene01 1;
+#X obj 29 14 seq_player 0 1 0 0;
+#X obj 637 14 seq_player 0 50 2 0;
+#X obj 332 14 seq_player 0 20 1 0;
+#X obj 942 14 seq_player 1 30 3 0;
+#X obj 25 80 seq_player 2 0 4 0;
+#X obj 331 79 seq_player 2 30 5 0;
+#X obj 636 78 seq_player 2 45 5 0;
+#X obj 944 77 seq_player 3 30 6 0;
+#X obj 24 138 seq_player 4 0 7 0;
+#X obj 331 138 seq_player 4 15 7 0;
+#X obj 638 138 seq_player 4 30 8 0;
+#X obj 945 138 seq_player 5 0 9 0;
+#X obj 25 195 seq_player 5 30 10 0;
+#X obj 333 194 seq_player 6 0 11 0;
+#X obj 639 194 seq_player 6 15 12 0;
+#X obj 947 195 seq_player 6 30 13 0;
+#X obj 27 249 seq_player 7 0 14 0;
+#X obj 334 250 seq_player 7 30 15 0;
+#X obj 641 249 seq_player 7 45 16 0;
+#X obj 947 250 seq_player 8 0 16 0;
+#X obj 27 303 seq_player 8 15 17 0;
+#X obj 334 305 seq_player 8 40 18 0;
+#X obj 642 305 seq_player 9 0 24 0;
+#X obj 949 304 seq_player 9 20 25 0;
+#X obj 27 357 seq_player 9 40 26 0;
+#X obj 336 358 seq_player 10 0 27 0;
+#X text 24 414 magnet wave;
+#X text 28 494 magnet wave back;
+#X obj 950 437 seq_player 0 0 22 0;
+#X obj 26 517 seq_player 11 0 23 1;
+#X obj 25 436 seq_player 10 20 19 1;
+#X obj 331 436 seq_player 0 0 20 1;
+#X obj 642 436 seq_player 0 0 21 1;
+#X obj 332 517 seq_player 0 0 24 1;
+#X obj 643 517 seq_player 0 0 25 1;
+#X obj 951 518 seq_player 0 0 26 1;
+#X text 23 579 1-04 Go to the position;
+#X text 1268 442 in case of sequential play set time 0 and connect right outlet to the next player's inlet;
+#X obj 21 602 seq_player 11 0 1012 1;
+#X connect 29 1 33 0;
+#X connect 30 1 31 0;
+#X connect 31 1 32 0;
+#X connect 32 1 28 0;
+#X connect 33 1 34 0;
+#X connect 34 1 35 0;
+#X restore 1328 585 pd Scene01;
+#X obj 1331 758 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 1331 779 s start_poll_Ahae;
+#X text 1082 810 https://docs.google.com/spreadsheets/d/1ngclODFzF_eBLfeVdtzH1cyrrppL95gOLrjWChj10I4/edit?gid=0#gid=0;
+#X obj 1327 559 Ahae_display01;
+#X connect 49 0 50 0;

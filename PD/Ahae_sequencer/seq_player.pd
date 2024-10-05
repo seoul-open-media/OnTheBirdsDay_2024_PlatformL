@@ -1,52 +1,42 @@
 #N canvas 609 158 1175 711 12;
-#X floatatom 406 380 5 0 0 1 sec_global sec_global - 0;
-#X floatatom 610 556 5 0 0 1 Ahae\ Sequence\ Number - num_seq_Ahae_timeline
-0;
-#X obj 406 408 sel 1;
-#X obj 472 333 nbx 5 14 -1e+37 1e+37 0 0 empty empty sec. 0 -8 0 10
-#fcfcfc #000000 #000000 0 256;
-#X obj 539 334 nbx 5 14 -1e+37 1e+37 0 0 empty empty seq_num 0 -8 0
-10 #fcfcfc #000000 #000000 0 256;
+#X floatatom 238 341 5 0 0 1 sec_global sec_global - 0;
+#X floatatom 610 556 5 0 0 1 Ahae\ Sequence\ Number - num_seq_Ahae_timeline 0;
+#X obj 238 369 sel 1;
+#X obj 472 333 nbx 5 14 -1e+37 1e+37 0 0 empty empty sec. 0 -8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 539 334 nbx 5 14 -1e+37 1e+37 0 0 empty empty seq_num 0 -8 0 10 #fcfcfc #000000 #000000 0 256;
 #X obj 434 484 route 1;
 #X obj 434 451 pack 1 f;
 #X obj 393 262 \$1;
 #X obj 429 261 \$2;
-#X obj 338 385 * 60;
-#X obj 338 410 +;
-#X floatatom 338 435 5 0 0 0 - - - 0;
+#X obj 195 346 * 60;
+#X obj 195 371 +;
+#X floatatom 195 396 5 0 0 0 - - - 0;
 #X obj 465 260 \$3;
-#X text 822 199 \$4: 0 no effect 1~5 : number of repetition of the
-sequence;
+#X text 822 199 \$4: 0 no effect 1~5 : number of repetition of the sequence;
 #X text 820 168 \$1 min. \$2 sec \$3 seq_num;
 #X obj 420 165 loadbang;
-#X obj 606 333 nbx 5 14 -1e+37 1e+37 0 0 empty empty repetition 0 -8
-0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 606 333 nbx 5 14 -1e+37 1e+37 0 0 empty empty repetition 0 -8 0 10 #fcfcfc #000000 #000000 0 256;
 #X obj 500 650 s num_repetition;
 #X obj 501 260 \$4;
-#X obj 407 332 nbx 5 14 -1e+37 1e+37 0 0 empty empty min. 0 -8 0 10
-#fcfcfc #000000 #000000 0 256;
-#X obj 430 616 bng 15 250 50 0 seq_start_bang empty seq_start_bang
-17 7 0 10 #fcfcfc #000000 #000000;
-#X obj 586 303 bng 15 250 50 0 empty empty play 17 7 0 10 #00ff04 #000000
-#000000;
+#X obj 407 332 nbx 5 14 -1e+37 1e+37 0 0 empty empty min. 0 -8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 430 616 bng 15 250 50 0 seq_start_bang empty seq_start_bang 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 586 303 bng 15 250 50 0 empty empty play 17 7 0 10 #00ff04 #000000 #000000;
 #X obj 540 623 f;
 #X obj 430 537 t b b f;
-#X obj 628 303 bng 15 250 50 0 empty empty stop 17 7 0 10 #ff0400 #000000
-#000000;
+#X obj 628 303 bng 15 250 50 0 empty empty stop 17 7 0 10 #ff0400 #000000 #000000;
 #X obj 630 407 s seq_end_bang;
 #X obj 738 409 s Stop_All_Ahae;
-#X obj 463 418 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
+#X obj 434 430 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 413 218 t b b b b;
-#X obj 373 190 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 670 321 tgl 25 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
-#X msg 406 435 1;
+#X obj 373 190 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 670 321 tgl 25 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X msg 238 396 1;
 #X obj 683 244 r stop_global;
 #X msg 684 272 0;
-#X obj 788 246 bng 15 250 50 0 empty seq_end_bang seq_end_bang 17 7
-0 10 #fcfcfc #000000 #000000;
+#X obj 788 246 bng 15 250 50 0 empty seq_end_bang seq_end_bang 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 420 396 inlet;
+#X obj 708 624 outlet;
+#X obj 783 626 outlet;
 #X connect 0 0 2 0;
 #X connect 2 0 6 0;
 #X connect 2 0 31 0;
@@ -81,4 +71,6 @@ sequence;
 #X connect 32 0 33 0;
 #X connect 33 0 30 0;
 #X connect 34 0 33 0;
+#X connect 34 0 37 0;
+#X connect 35 0 27 0;
 #X coords 0 -1 1 1 300 50 1 400 300;
