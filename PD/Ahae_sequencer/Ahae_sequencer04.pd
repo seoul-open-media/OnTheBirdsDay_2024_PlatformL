@@ -145,7 +145,7 @@
 #X obj 58 599 seq02 11;
 #X obj 60 643 seq02 12;
 #X obj 60 688 seq02 13;
-#X obj 1180 26 Xbee02;
+#X obj 1335 519 Xbee02;
 #N canvas 679 109 996 831 Position 0;
 #X obj 34 190 Pos 1;
 #X floatatom 267 191 5 0 0 0 - 1-positionX - 0;
@@ -253,7 +253,7 @@
 #X floatatom 41 94 5 0 0 2 Position\ Number - num_preset_pos 0;
 #X connect 60 0 61 0;
 #X connect 61 0 60 0;
-#X restore 1181 51 pd Position;
+#X restore 1361 605 pd Position;
 #X floatatom 1315 115 5 0 0 2 Ahae\ Sequence\ Number - num_seq_Ahae
 0;
 #N canvas 187 186 1850 984 timeline 0;
@@ -291,6 +291,38 @@
 #X connect 13 0 10 0;
 #X coords 0 -1 1 1 1100 60 2 100 300;
 #X restore 57 756 pd timeline;
+#X obj 1336 259 bng 50 250 50 0 empty empty STOP\ ALL\ AHAE -25 -15
+0 15 #ff0400 #000000 #000000;
+#N canvas 0 0 547 304 global_message 0;
+#X obj 53 134 inlet;
+#X obj 51 214 s stop_global;
+#X obj 158 134 inlet;
+#X obj 158 216 s CRMuxXbee;
+#X msg 158 186 50002;
+#X obj 246 133 inlet;
+#X obj 246 215 s SetBaseYawZero;
+#X msg 246 185 50003;
+#X obj 366 133 inlet;
+#X obj 366 215 s SetBaseYawM025;
+#X msg 366 185 50004;
+#X msg 51 184 50000;
+#X connect 0 0 11 0;
+#X connect 2 0 4 0;
+#X connect 4 0 3 0;
+#X connect 5 0 7 0;
+#X connect 7 0 6 0;
+#X connect 8 0 10 0;
+#X connect 10 0 9 0;
+#X connect 11 0 1 0;
+#X restore 1336 391 pd global_message;
+#X obj 1374 329 bng 25 250 50 0 empty empty CRMuxXbee 0 -5 0 10 #ff8300
+#000000 #000000;
+#X obj 1413 344 bng 25 250 50 0 empty empty SetBaseYawZero 0 -5 0 10
+#faff00 #000000 #000000;
+#X obj 1452 358 bng 25 250 50 0 empty empty SetBaseYawZero 0 -5 0 10
+#feffc6 #000000 #000000;
+#X obj 1335 481 tgl 25 0 empty empty Send\ Data -5 -5 0 10 #fcfcfc
+#000000 #000000 0 1;
 #X connect 0 0 2 0;
 #X connect 0 1 3 0;
 #X connect 0 2 4 0;
@@ -309,3 +341,8 @@
 #X connect 0 15 17 0;
 #X connect 1 0 0 0;
 #X connect 46 0 0 1;
+#X connect 65 0 66 0;
+#X connect 67 0 66 1;
+#X connect 68 0 66 2;
+#X connect 69 0 66 3;
+#X connect 70 0 61 0;

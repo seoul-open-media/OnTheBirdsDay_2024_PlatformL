@@ -35,6 +35,8 @@
 #000000;
 #X obj 184 81 bng 15 250 50 0 empty device_ch9_note device_ch9_note
 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 351 44;
+#X floatatom 124 18 5 0 0 0 - num_seq_Ahae - 0;
 #X connect 1 0 4 1;
 #X connect 1 0 11 1;
 #X connect 2 0 7 0;
@@ -62,9 +64,10 @@
 #X connect 22 0 2 0;
 #X connect 23 0 3 0;
 #X connect 24 0 10 0;
+#X connect 26 0 1 0;
 #X coords 0 -1 1 1 118 17 2 100 100;
 #X restore 503 128 pd Premanager-STORE;
-#N canvas 425 507 1779 516 Premanager-ReCALL 1;
+#N canvas 425 507 1779 516 Premanager-ReCALL 0;
 #X obj 101 101 cnv 15 116 15 empty \$1-recall_blink_color empty 20
 12 0 14 #28f4f4 #fcfcfc 0;
 #X floatatom 115 100 5 0 500 0 - - - 0;
@@ -102,7 +105,7 @@
 #fcfcfc #000000 #000000;
 #X obj 318 85 t b f;
 #X obj 316 64 r light_control;
-#X floatatom 133 -11 5 0 0 2 - num_preset_pos - 0;
+#X floatatom 133 -11 5 0 0 2 - num_seq_Ahae - 0;
 #X obj 131 18 t b f;
 #X connect 1 0 4 1;
 #X connect 1 0 11 1;
