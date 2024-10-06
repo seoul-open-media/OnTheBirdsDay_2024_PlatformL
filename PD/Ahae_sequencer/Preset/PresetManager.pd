@@ -1,23 +1,18 @@
-#N canvas 275 147 1040 609 10;
+#N canvas 618 349 1040 609 10;
 #X declare -path ./customGUI;
-#X obj 501 101 cnv 15 180 63 empty \$0-PreManager-presetName \$1 5
-53 0 14 #dcdcdc #000000 0;
-#N canvas 84 149 623 390 Premanager-STORE 0;
-#X obj 102 101 cnv 15 116 15 empty \$1-store_blink_color empty 20 12
-0 14 #28f4f4 #fcfcfc 0;
+#X obj 501 101 cnv 15 180 63 empty \$0-PreManager-presetName \$1 5 53 0 14 #dcdcdc #000000 0;
+#N canvas 84 149 623 390 Premanager-STORE 1;
+#X obj 102 101 cnv 15 116 15 empty \$1-store_blink_color empty 20 12 0 14 #28f4f4 #fcfcfc 0;
 #X floatatom 116 100 5 0 500 0 - - - 0;
-#X obj 101 101 bng 15 250 50 0 empty empty - 5 7 0 10 #fcc4c4 #0400fc
-#000000;
-#X obj 148 101 bng 15 250 50 0 empty empty + 5 7 0 10 #fcc4c4 #0400fc
-#000000;
+#X obj 101 101 bng 15 250 50 0 empty empty - 5 7 0 10 #fcc4c4 #0400fc #000000;
+#X obj 148 101 bng 15 250 50 0 empty empty + 5 7 0 10 #fcc4c4 #0400fc #000000;
 #X obj 102 181 i;
 #X msg 165 181 1;
 #X obj 119 221 +;
 #X obj 102 145 t b b;
 #X msg 129 181 -1;
 #X obj 138 145 t b b;
-#X obj 163 101 bng 15 250 50 0 empty empty STORE 17 8 0 10 #fcc4c4
-#0400fc #000000;
+#X obj 163 101 bng 15 250 50 0 empty empty STORE 17 8 0 10 #fcc4c4 #0400fc #000000;
 #X obj 190 273 i;
 #X obj 190 340 outlet;
 #X obj 415 135 t b b;
@@ -29,14 +24,11 @@
 #X floatatom 500 143 5 0 0 0 - - - 0;
 #X msg 476 185 color 43;
 #X msg 415 185 color 17;
-#X obj 82 81 bng 15 250 50 0 empty ts1 ts1 17 7 0 10 #fcfcfc #000000
-#000000;
-#X obj 149 81 bng 15 250 50 0 empty ts2 ts2 17 7 0 10 #fcfcfc #000000
-#000000;
-#X obj 184 81 bng 15 250 50 0 empty device_ch9_note device_ch9_note
-17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 82 81 bng 15 250 50 0 empty ts1 ts1 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 149 81 bng 15 250 50 0 empty ts2 ts2 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 184 81 bng 15 250 50 0 empty device_ch9_note device_ch9_note 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 351 44;
-#X floatatom 124 18 5 0 0 0 - num_seq_Ahae - 0;
+#X floatatom 124 18 5 0 0 0 - num_seq_\$1 - 0;
 #X connect 1 0 4 1;
 #X connect 1 0 11 1;
 #X connect 2 0 7 0;
@@ -67,22 +59,18 @@
 #X connect 26 0 1 0;
 #X coords 0 -1 1 1 118 17 2 100 100;
 #X restore 503 128 pd Premanager-STORE;
-#N canvas 425 507 1779 516 Premanager-ReCALL 0;
-#X obj 101 101 cnv 15 116 15 empty \$1-recall_blink_color empty 20
-12 0 14 #28f4f4 #fcfcfc 0;
+#N canvas 77 198 531 430 Premanager-ReCALL 0;
+#X obj 101 101 cnv 15 116 15 empty \$1-recall_blink_color empty 20 12 0 14 #28f4f4 #fcfcfc 0;
 #X floatatom 115 100 5 0 500 0 - - - 0;
-#X obj 101 101 bng 15 250 50 0 empty empty - 5 7 0 10 #fcc4c4 #0400fc
-#000000;
-#X obj 147 101 bng 15 250 50 0 empty empty + 5 7 0 10 #fcc4c4 #0400fc
-#000000;
+#X obj 101 101 bng 15 250 50 0 empty empty - 5 7 0 10 #fcc4c4 #0400fc #000000;
+#X obj 147 101 bng 15 250 50 0 empty empty + 5 7 0 10 #fcc4c4 #0400fc #000000;
 #X obj 102 210 i;
 #X msg 165 210 1;
 #X obj 119 250 +;
 #X obj 102 174 t b b;
 #X msg 129 210 -1;
 #X obj 138 174 t b b;
-#X obj 162 101 bng 15 250 50 0 empty empty ReCALL 17 8 0 10 #fcc4c4
-#0400fc #000000;
+#X obj 162 101 bng 15 250 50 0 empty empty ReCALL 17 8 0 10 #fcc4c4 #0400fc #000000;
 #X obj 190 305 i;
 #X obj 190 329 outlet;
 #X obj 255 158 t b b;
@@ -97,15 +85,12 @@
 #X floatatom 357 166 5 0 0 0 - - - 0;
 #X msg 254 221 color 17;
 #X msg 315 221 color 43;
-#X obj 87 66 bng 15 250 50 0 empty ts1_ch1 ts1_ch1 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 151 66 bng 15 250 50 0 empty ts2_ch1 ts2_ch1 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 213 66 bng 15 250 50 0 empty device_ch1 device_ch1 17 7 0 10
-#fcfcfc #000000 #000000;
+#X obj 87 66 bng 15 250 50 0 empty ts1_ch1 ts1_ch1 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 151 66 bng 15 250 50 0 empty ts2_ch1 ts2_ch1 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 213 66 bng 15 250 50 0 empty device_ch1 device_ch1 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 318 85 t b f;
 #X obj 316 64 r light_control;
-#X floatatom 133 -11 5 0 0 2 - num_seq_Ahae - 0;
+#X floatatom 133 -11 5 0 0 2 - num_seq_\$1 - 0;
 #X obj 131 18 t b f;
 #X connect 1 0 4 1;
 #X connect 1 0 11 1;
@@ -156,8 +141,7 @@
 #X obj 413 270 t b b;
 #X obj 413 294 del 100;
 #X obj 413 319 t b b;
-#X obj 349 190 cnv 15 15 15 empty empty empty 10 12 0 14 #fc0400 #404040
-0;
+#X obj 349 190 cnv 15 15 15 empty empty empty 10 12 0 14 #fc0400 #404040 0;
 #X floatatom 387 132 5 0 10 0 - - - 0;
 #X msg 626 205 click;
 #X obj 220 281 s \$1-PRECALL;
@@ -178,13 +162,11 @@
 #X connect 5 0 2 0;
 #X connect 6 0 5 0;
 #X restore 413 416 pd write-preset-file;
-#X obj 626 137 bng 15 250 50 0 empty empty PRESET 17 8 0 9 #fc0400
-#f8fc00 #000000;
+#X obj 626 137 bng 15 250 50 0 empty empty PRESET 17 8 0 9 #fc0400 #f8fc00 #000000;
 #X obj 814 108 declare -path ./customGUI;
 #X msg 653 231 sort;
 #X obj 626 180 t b b;
-#X obj 599 462 cnv 15 15 15 empty empty empty 10 12 0 14 #0400fc #404040
-0;
+#X obj 599 462 cnv 15 15 15 empty empty empty 10 12 0 14 #0400fc #404040 0;
 #N canvas 276 244 398 295 read-preset-file 0;
 #X obj 30 20 inlet;
 #X obj 30 200 outlet;
@@ -203,8 +185,7 @@
 #X obj 461 240 t b a;
 #X obj 220 236 t a b a;
 #X obj 543 480 text define \$1-loaded-preset;
-#X text 591 276 clears before saving values \, this way deleted GUIs
-get eliminated from the preset, f 28;
+#X text 591 276 clears before saving values \, this way deleted GUIs get eliminated from the preset, f 28;
 #X text 402 360 sends the SAVE order to all GUIs;
 #X text 243 323 loads the preset before calling, f 21;
 #X floatatom 152 294 5 0 0 0 - - - 0;

@@ -1,4 +1,4 @@
-#N canvas 625 29 759 842 12;
+#N canvas 754 103 759 842 12;
 #X declare -lib Gem;
 #X obj 27 196 Pos 1;
 #X obj 27 241 Pos 2;
@@ -74,7 +74,7 @@
 #X obj 1103 218 ahae_plotter 11;
 #X obj 1103 248 ahae_plotter 12;
 #X obj 1221 161 ahae_plotter 13;
-#X floatatom 41 94 5 0 0 2 Position\ Number - num_preset_pos 0;
+#X floatatom 41 94 5 0 0 2 Position\ Number - num_seq_Position 0;
 #X text 179 158 Heading in degree;
 #X obj 290 167 bng 20 250 50 0 send_position_preset empty send_pos. 0 -10 0 12 #fcfcfc #000000 #000000;
 #X obj 362 167 bng 20 250 50 0 send_heading_preset empty send_heading 0 -10 0 12 #fcfcfc #000000 #000000;
