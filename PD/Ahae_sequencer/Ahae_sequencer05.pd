@@ -1,4 +1,4 @@
-#N canvas 64 27 1550 858 12;
+#N canvas 247 69 1550 858 12;
 #X text 24 204 Ahae;
 #X text 35 227 1;
 #X text 36 270 2;
@@ -284,7 +284,7 @@
 #X connect 26 0 24 0;
 #X coords 0 -1 1 1 1200 60 2 100 100;
 #X restore 8 105 pd sequencer_main;
-#N canvas 513 516 1654 757 Scene01 0;
+#N canvas 111 237 1654 757 Scene01 0;
 #X obj 25 80 seq_player 2 0 4 0;
 #X obj 331 79 seq_player 2 30 5 0;
 #X obj 636 78 seq_player 2 45 5 0;
