@@ -1,4 +1,4 @@
-#N canvas 556 57 970 855 12;
+#N canvas 625 29 759 842 12;
 #X declare -lib Gem;
 #X obj 27 196 Pos 1;
 #X obj 27 241 Pos 2;
@@ -58,7 +58,7 @@
 #X connect 9 0 10 0;
 #X connect 10 0 0 0;
 #X restore 357 75 pd gemwin;
-#X msg 357 56 destroy;
+#X msg 357 56 create;
 #X text 353 35 Create window:;
 #X obj 422 7 declare -lib Gem;
 #X obj 874 161 ahae_plotter 1;
