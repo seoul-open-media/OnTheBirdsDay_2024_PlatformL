@@ -30,7 +30,7 @@
 #X obj 373 190 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 670 321 tgl 25 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X msg 646 271 1;
-#X obj 683 244 r stop_global;
+#X obj 692 176 r stop_global;
 #X msg 684 272 0;
 #X obj 708 624 outlet;
 #X obj 985 717 outlet;
@@ -54,17 +54,17 @@
 #X obj 986 629 bng 20 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
 #X obj 955 138 r \$0-trigger-bang;
 #X obj 1038 718 s \$0-seq-end-bang;
-#X obj 715 268 r \$0-seq-end-bang;
+#X obj 740 222 r \$0-seq-end-bang;
 #X obj 955 239 spigot;
 #X obj 995 211 tgl 20 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0 1;
 #X obj 938 192 delay 1;
 #X obj 284 459 s stop_others_bang;
-#X obj 627 181 r \$0-trigger-bang;
-#X obj 726 292 r stop_others_bang;
+#X obj 524 189 r \$0-trigger-bang;
+#X obj 751 246 r stop_others_bang;
 #X obj 1039 233 r stop_global;
 #X obj 130 408 bng 20 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
 #X obj 1021 179 r \$0-num-repetition;
-#X obj 594 219 delay 1;
+#X obj 525 212 delay 1;
 #X msg 1129 386 1;
 #X obj 1047 269 r \$0-seq-end-bang;
 #X floatatom 1059 429 5 0 0 0 - - - 0;
@@ -88,6 +88,8 @@
 #X obj 807 590 int;
 #X obj 809 616 + 1;
 #X obj 947 512 t f f;
+#X obj 702 201 bng 15 250 50 0 empty seq_start_bang seq_start_bang 17 7 0 10 #fcfcfc #000000 #000000;
+#X msg 691 231 0;
 #X connect 0 0 2 0;
 #X connect 2 0 74 0;
 #X connect 3 0 10 1;
@@ -122,6 +124,7 @@
 #X connect 28 0 27 0;
 #X connect 30 0 29 0;
 #X connect 31 0 32 0;
+#X connect 31 0 90 0;
 #X connect 32 0 29 0;
 #X connect 35 0 82 0;
 #X connect 36 0 37 0;
@@ -176,4 +179,6 @@
 #X connect 87 0 85 0;
 #X connect 88 0 50 0;
 #X connect 88 1 83 0;
+#X connect 89 0 90 0;
+#X connect 90 0 85 0;
 #X coords 0 -1 1 1 300 50 1 400 300;

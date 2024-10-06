@@ -257,7 +257,7 @@
 #X connect 26 0 24 0;
 #X coords 0 -1 1 1 1200 60 2 100 100;
 #X restore 8 105 pd sequencer_main;
-#N canvas 160 271 1387 720 Scene01 0;
+#N canvas 251 200 1262 730 Scene01 1;
 #X text 27 483 magnet wave;
 #X text 29 563 magnet wave back;
 #X obj 28 505 seq_player 10 20 19 1;
