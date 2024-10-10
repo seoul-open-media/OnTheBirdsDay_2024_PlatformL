@@ -1,4 +1,4 @@
-#N canvas 671 106 759 842 12;
+#N canvas 1022 98 759 842 12;
 #X declare -lib Gem;
 #X obj 27 196 Pos 1;
 #X obj 27 241 Pos 2;

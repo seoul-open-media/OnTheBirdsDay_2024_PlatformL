@@ -98,7 +98,7 @@ void loop() {
     DW1000Ng::startTransmit();
     // Serial.write (255);
     // Serial.write (1);
-    delay(50); // 3 anchors so it should be much shorter than 100
+    delay(35); // 3 anchors so it should be much shorter than 100
   }
   //for (int i=4; i< 7; i++){
   //  DW1000Ng::forceTRxOff();
